@@ -1,0 +1,27 @@
+{% extends "questionnaire/base_generic.html" %}
+
+{% block content %}
+{% if user.is_authenticated %}
+<h1><p>Thanks for Playing <em>WhoWantstoBeaMillionaire</em>, blah balab.. </p></h1>
+
+<h3> Correct questions are:</h3>
+<ul>
+    {% for q in correct %}
+    <li>{{q}}</li>
+    {% endfor %}
+</ul>
+
+<h3> wrong questions are:</h3>
+<ul>
+    {% for q in wrong %}
+    <li>{{q}}</li>
+    {% endfor %}
+</ul>
+
+<h3> Current Score: {{score}}</h3>
+<h3><a href="/index/new-game"> Start a new Game</a></h3>
+{% else %}
+<h1><p>let's <em>login</em> First </p></h1>
+{% endif %}
+
+{% endblock %}

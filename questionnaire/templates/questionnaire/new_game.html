@@ -1,0 +1,13 @@
+{% extends "questionnaire/base_generic.html" %}
+
+{% block content %}
+<h1> Let's Play...</h1>
+<form action="" method="post">
+    {% csrf_token %}
+    <table>
+        {{ form.as_p }}
+    </table>
+    <input type="submit" value="Submit"/>
+</form>
+
+{% endblock %}
